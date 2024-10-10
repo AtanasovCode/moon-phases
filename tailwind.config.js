@@ -17,11 +17,21 @@ export default {
       backgroundImage: {
         'hero-desktop': "url('/bg-earth-moon.svg')",
         'hero-mobile': "url('/bg-earth-moon-mobile.svg')",
-        'starry-night': "url('/bg-stars.svg')",
+        'starry-night': "url('/starry-night.svg')",
       },
       backgroundSize: {
+        '1000%': "1000%",
+        '500%': "500%",
         '300%': "300%",
-        '200%': "200%",
+      },
+      keyframes: {
+        'pan': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
+        },
+      },
+      animation: {
+        'pan-bg': 'pan linear 25s infinite reverse',
       },
     },
   },

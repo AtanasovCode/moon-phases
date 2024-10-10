@@ -19,8 +19,9 @@ const Hero = () => {
                     />
                 </div>
                 <div className="
-                    absolute w-full h-full top-0 left-0 z-[-1]
-                    bg-starry-night bg-center bg-300% bg-no-repeat
+                    absolute w-full h-full top-0 left-0 z-[1]
+                    bg-starry-night bg-center bg-300% gb-no-repeat
+                    animate-pan-bg
                 ">
                     {/*Hero Background Image*/}
                 </div>
