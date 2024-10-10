@@ -6,8 +6,23 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        'space-black': "#000000",
+        'text': "#EEEEEE",
+      },
       fontFamily: {},
+      screens: {
+        'xs': "550px",
+      },
+      backgroundImage: {
+        'hero-desktop': "url('/bg-earth-moon.svg')",
+        'hero-mobile': "url('/bg-earth-moon-mobile.svg')",
+        'starry-night': "url('/bg-stars.svg')",
+      },
+      backgroundSize: {
+        '300%': "300%",
+        '200%': "200%",
+      },
     },
   },
   plugins: [],
