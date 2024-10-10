@@ -23,6 +23,8 @@ export default {
         '1000%': "1000%",
         '500%': "500%",
         '300%': "300%",
+        '200%': "200%",
+        '100%': "100%",
       },
       keyframes: {
         'pan': {
@@ -31,7 +33,7 @@ export default {
         },
       },
       animation: {
-        'pan-bg': 'pan linear 25s infinite reverse',
+        'pan-bg': 'pan linear 35s infinite reverse',
       },
     },
   },
