@@ -7,7 +7,8 @@ const Hero = () => {
                     absolute w-full h-full top-0 left-0 z-0 
                     bg-starry-night bg-center bg-300% gb-no-repeat
                     animate-pan-bg
-                    xs:bg-200%
+                    xs:bg-300%
+                    lg:bg-200%
                 ">
                 {/*Stars Background Image*/}
             </div>
@@ -50,7 +51,10 @@ const Hero = () => {
                             type="button"
                             value="See now"
                             className="
-                                w-[70%] text-black bg-white px-4 py-2 font-semibold
+                                w-[70%] text-black bg-white px-4 py-2 font-semibold rounded-xl
+                                lg:bg-opacity-20 lg:hover:bg-opacity-90 lg:hover:cursor-pointer 
+                                lg:text-white lg:hover:text-black transition-all duration-300 ease-in-out
+                                lg:backdrop-blur-lg
                             "
                         />
                     </div>
