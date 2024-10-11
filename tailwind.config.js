@@ -13,8 +13,10 @@ export default {
       fontFamily: {},
       screens: {
         'xs': "550px",
+        'xl': "1600px",
       },
       backgroundImage: {
+        'hero-desktop-xl': "url('/bg-earth-moon-xl.svg')",
         'hero-desktop': "url('/bg-earth-moon.svg')",
         'hero-mobile': "url('/bg-earth-moon-mobile.svg')",
         'starry-night': "url('/starry-night.svg')",
