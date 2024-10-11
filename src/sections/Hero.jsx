@@ -6,7 +6,7 @@ const Hero = () => {
             <div className="
                     absolute w-full h-full top-0 left-0 z-0 
                     bg-starry-night bg-center bg-300% gb-no-repeat
-                    animate-pan-bg
+                    motion-safe:animate-pan-bg
                     xs:bg-300%
                     lg:bg-200%
                 ">
@@ -43,7 +43,7 @@ const Hero = () => {
                         <div>Moon</div>
                         <div>Phases</div>
                     </div>
-                    <div className="text-gray-300 text-center lg:text-left">
+                    <div className="text-gray-300 text-center lg:text-left lg:w-[70%] lg:text-lg">
                         The Moon has 8 phases, see which one is above you right now.
                     </div>
                     <div className="w-full mt-4 flex items-center justify-center lg:justify-start">
@@ -51,9 +51,9 @@ const Hero = () => {
                             type="button"
                             value="See now"
                             className="
-                                w-[70%] text-black bg-white px-4 py-2 font-semibold rounded-xl
-                                lg:bg-opacity-20 lg:hover:bg-opacity-90 lg:hover:cursor-pointer 
-                                lg:text-white lg:hover:text-black transition-all duration-300 ease-in-out
+                                w-[70%] text-black bg-text px-4 py-2 font-semibold rounded-xl
+                                lg:bg-opacity-30 lg:hover:bg-opacity-100 lg:hover:cursor-pointer 
+                                lg:text-text lg:hover:text-black transition-all duration-300 ease-in-out
                                 lg:backdrop-blur-lg
                             "
                         />

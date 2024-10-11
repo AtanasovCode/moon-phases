@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'space-black': "#000000",
-        'text': "#EEEEEE",
+        'space-black': "#171738",
+        'text': "#EBEBEB",
       },
       fontFamily: {},
       screens: {
