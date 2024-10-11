@@ -1,6 +1,25 @@
+import { useState } from 'react';
 import moonIcon from '../assets/images/moon.svg';
+import checkmarkIcon from '../assets/icons/checkmark.svg';
 
 const Hero = () => {
+
+    const [hideText, setHideText] = useState(false);
+
+    const toggleHideText = () => {
+        setHideText(!hideText);
+    }
+
+    const hideStyle = hideText ? 
+        "opacity-[0]"
+        :
+        "opacity-[1]";
+
+    const hideCheckmark = hideText ?
+        "opacity-100"
+        :
+        "opacity-0";
+
     return (
         <div className="h-[100dvh] bg-space-black w-full flex items-center justify-center relative">
             <div className="
@@ -35,10 +54,11 @@ const Hero = () => {
                 </div>
 
                 {/* Page Content Below */}
-                <div className="
+                <div className={`
                     flex flex-col items-center justify-center text-text w-[80%] z-50
-                    lg:w-[35%] lg:items-start
-                ">
+                    lg:w-[35%] lg:items-start 
+                    ${hideStyle} transition-all duration-500 ease-in-out
+                `}>
                     <div className="font-black text-6xl mb-4 lg:text-7xl">
                         <div>Moon</div>
                         <div>Phases</div>
@@ -58,6 +78,31 @@ const Hero = () => {
                             "
                         />
                     </div>
+                </div>
+            </div>
+            <div
+                className="absolute bottom-[2%] left-[2%] z-20 flex items-center justify-center 
+                cursor-pointer opacity-40 hover:opacity-100 transition-all duration-300 ease-in-out"
+                onClick={() => toggleHideText()}
+            >
+                <div className={`
+                            w-4 aspect-square bg-transparent relative 
+                            border border-text border-solid
+                        `}
+                >
+                    <div className={`
+                        absolute top-0 left-0 w-full h-full bg-text ${hideCheckmark}
+                        transition-all duration-300 ease-in-out flex items-center justify-center
+                    `}>
+                        <img 
+                            src={checkmarkIcon}
+                            alt="checkmark icon"
+                            className="w-[70%]"
+                        />
+                    </div>
+                </div>
+                <div className="text-text ml-2">
+                    Hide text
                 </div>
             </div>
         </div>
