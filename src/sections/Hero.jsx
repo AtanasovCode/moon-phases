@@ -6,25 +6,12 @@ import checkmarkIcon from '../assets/icons/checkmark.svg';
 const Hero = () => {
 
     const {
-        location,
-        setLocation,
+        hideText,
+        toggleHideText,
     } = useMoonStore();
 
-    const [hideText, setHideText] = useState(false);
-
-    const toggleHideText = () => {
-        setHideText(!hideText);
-    }
-
-    const hideStyle = hideText ?
-        "opacity-[0]"
-        :
-        "opacity-[1]";
-
-    const hideCheckmark = hideText ?
-        "opacity-100"
-        :
-        "opacity-0";
+    const hideStyle = hideText ? "opacity-[0]" : "opacity-[1]";
+    const hideCheckmark = hideText ? "opacity-100" : "opacity-0";
 
     return (
         <div className="h-[100dvh] bg-space-black w-full flex items-center justify-center relative">
