@@ -8,8 +8,4 @@ export const useMoonStore = create((set) => ({
 
     moonPhase: 0,
     setMoonPhase: (moonPhase) => set({ moonPhase }),
-    
-    //pop up
-    showPopUp: false,
-    togglePopUp: () => set((state) => ({ showPopUp: state.showPopUp === true ? false : true })),
 }))

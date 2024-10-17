@@ -3,13 +3,11 @@ import { useState } from 'react';
 import moonIcon from '../assets/images/moon.svg';
 import checkmarkIcon from '../assets/icons/checkmark.svg';
 
-import PopUp from '../components/PopUp';
-
 const Hero = () => {
 
     const {
-        showPopUp,
-        togglePopUp,
+        location,
+        setLocation,
     } = useMoonStore();
 
     const [hideText, setHideText] = useState(false);
@@ -18,7 +16,7 @@ const Hero = () => {
         setHideText(!hideText);
     }
 
-    const hideStyle = hideText ? 
+    const hideStyle = hideText ?
         "opacity-[0]"
         :
         "opacity-[1]";
@@ -30,7 +28,6 @@ const Hero = () => {
 
     return (
         <div className="h-[100dvh] bg-space-black w-full flex items-center justify-center relative">
-            { showPopUp && <PopUp /> }
             <div className="
                     absolute w-full h-full top-0 left-0 z-0 
                     bg-starry-night bg-center bg-300% gb-no-repeat
@@ -80,10 +77,8 @@ const Hero = () => {
                             type="button"
                             value="See now"
                             className="
-                                w-[70%] text-black bg-text px-4 py-2 font-semibold rounded-xl
-                                lg:bg-opacity-30 lg:hover:bg-opacity-100 cursor-pointer 
-                                lg:text-text lg:hover:text-black transition-all duration-300 ease-in-out
-                                lg:backdrop-blur-lg
+                                w-[70%] text-text bg-space-black border-2 border-primary
+                                px-4 py-3 font-semibold rounded-xl cursor-pointer 
                             "
                             onClick={() => togglePopUp()}
                         />
@@ -104,7 +99,7 @@ const Hero = () => {
                         absolute top-0 left-0 w-full h-full bg-text ${hideCheckmark}
                         transition-all duration-300 ease-in-out flex items-center justify-center
                     `}>
-                        <img 
+                        <img
                             src={checkmarkIcon}
                             alt="checkmark icon"
                             className="w-[70%]"
