@@ -7,9 +7,8 @@ export const useMoonStore = create((set) => ({
     hideText: false,
     toggleHideText: () => set((state) => ({ hideText: !state.hideText })),
 
-
-    location: "",
-    setLocation: (location) => set({ location }),
+    loading: false,
+    setLoading: (loading) => set({ loading }),
 
     moonPhase: 0,
     setMoonPhase: (moonPhase) => set({ moonPhase }),

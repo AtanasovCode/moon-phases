@@ -3,7 +3,7 @@ import { useState } from 'react';
 import moonIcon from '../assets/images/moon.svg';
 import checkmarkIcon from '../assets/icons/checkmark.svg';
 
-const Hero = () => {
+const Hero = ({ getMoonPhase, }) => {
 
     const {
         hideText,
@@ -67,7 +67,7 @@ const Hero = () => {
                                 w-[70%] text-text bg-space-black border-2 border-primary
                                 px-4 py-3 font-semibold rounded-xl cursor-pointer 
                             "
-                            onClick={() => togglePopUp()}
+                            onClick={() => getMoonPhase()}
                         />
                     </div>
                 </div>
