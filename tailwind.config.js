@@ -8,7 +8,10 @@ export default {
     extend: {
       colors: {
         'space-black': "#171738",
+        'background': '#141155',
         'text': "#EBEBEB",
+        'primary': '#35d646',
+        'secondary': '#2364A9',
       },
       fontFamily: {},
       screens: {

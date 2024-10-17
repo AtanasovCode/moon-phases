@@ -1,8 +1,16 @@
+import { useMoonStore } from '../useMoonStore';
 import { useState } from 'react';
 import moonIcon from '../assets/images/moon.svg';
 import checkmarkIcon from '../assets/icons/checkmark.svg';
 
+import PopUp from '../components/PopUp';
+
 const Hero = () => {
+
+    const {
+        showPopUp,
+        togglePopUp,
+    } = useMoonStore();
 
     const [hideText, setHideText] = useState(false);
 
@@ -22,6 +30,7 @@ const Hero = () => {
 
     return (
         <div className="h-[100dvh] bg-space-black w-full flex items-center justify-center relative">
+            { showPopUp && <PopUp /> }
             <div className="
                     absolute w-full h-full top-0 left-0 z-0 
                     bg-starry-night bg-center bg-300% gb-no-repeat
@@ -72,10 +81,11 @@ const Hero = () => {
                             value="See now"
                             className="
                                 w-[70%] text-black bg-text px-4 py-2 font-semibold rounded-xl
-                                lg:bg-opacity-30 lg:hover:bg-opacity-100 lg:hover:cursor-pointer 
+                                lg:bg-opacity-30 lg:hover:bg-opacity-100 cursor-pointer 
                                 lg:text-text lg:hover:text-black transition-all duration-300 ease-in-out
                                 lg:backdrop-blur-lg
                             "
+                            onClick={() => togglePopUp()}
                         />
                     </div>
                 </div>
