@@ -8,7 +8,7 @@ const Phase = ({
 }) => {
 
     return (
-        <div className="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-secondary text-text">
+        <div className="flex flex-col items-center justify-center p-4 rounded-xl border-2 bg-background border-secondary text-text">
             <div className="text-xl font-semibold mb-4 text-center w-full">
                 {formatDateToDay(date)}
             </div>
