@@ -27,6 +27,7 @@ export default {
         'hero-desktop': "url('/bg-earth-moon.svg')",
         'hero-mobile': "url('/bg-earth-moon-mobile.svg')",
         'starry-night': "url('/starry-night.svg')",
+        'starry-night-small': "url('./starry-night-small.svg')",
       },
       backgroundSize: {
         '1000%': "1000%",
@@ -34,6 +35,7 @@ export default {
         '300%': "300%",
         '200%': "200%",
         '100%': "100%",
+        '50%': "50%",
       },
       keyframes: {
         'pan': {
