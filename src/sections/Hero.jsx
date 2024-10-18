@@ -1,7 +1,8 @@
 import { useMoonStore } from '../useMoonStore';
-import { useState } from 'react';
 import moonIcon from '../assets/images/moon.svg';
 import checkmarkIcon from '../assets/icons/checkmark.svg';
+
+import { SpinnerGap, Check } from '@phosphor-icons/react';
 
 const Hero = ({ getMoonPhase, }) => {
 
@@ -86,10 +87,10 @@ const Hero = ({ getMoonPhase, }) => {
                         absolute top-0 left-0 w-full h-full bg-text ${hideCheckmark}
                         transition-all duration-300 ease-in-out flex items-center justify-center
                     `}>
-                        <img
-                            src={checkmarkIcon}
-                            alt="checkmark icon"
-                            className="w-[70%]"
+                        <Check 
+                            size="80%"
+                            weight="regular"
+                            color="#000"
                         />
                     </div>
                 </div>

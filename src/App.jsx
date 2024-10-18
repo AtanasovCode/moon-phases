@@ -1,19 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useMoonStore } from "./useMoonStore";
+
 import Hero from "./sections/Hero";
+import MoonPhase from "./sections/MoonPhase";
 
 
 const App = () => {
 
+  const moonRef = useRef(null);
+
   const {
-    loading, 
-    setLoading, 
+    setLoading,
     setMoonPhase,
+    setDays,
+    moonPhase,
+    dataHasBeenFetched,
+    setDataHasBeenFetched
   } = useMoonStore();
 
   const fetchData = async () => {
     try {
       setLoading(true);
+      setDataHasBeenFetched(false);
 
       const data = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Skopje?unitGroup=us&include=current&key=N98UUEZWJCFKVHRPUJNY28T7R&contentType=json");
 
@@ -33,20 +41,22 @@ const App = () => {
     try {
       const response = await fetchData();
 
-      if(!response) return;
+      if (!response) return;
 
       setMoonPhase(response.currentConditions.moonphase);
-      console.log(response.currentConditions.moonphase);
-    } catch(error) {
+      setDays(response.days);
+    } catch (error) {
       console.error(error.message);
     } finally {
       setLoading(false);
+      setDataHasBeenFetched(true);
     }
   }
 
   return (
     <div className="w-full min-h-[100dvh] bg-black font-sans">
       <Hero getMoonPhase={getMoonPhase} />
+      { dataHasBeenFetched && <MoonPhase moonRef={moonRef} /> }
     </div>
   );
 }
