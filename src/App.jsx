@@ -53,6 +53,12 @@ const App = () => {
     }
   }
 
+  useEffect(() => {
+    if(dataHasBeenFetched) {
+      moonRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [dataHasBeenFetched])
+
   return (
     <div className="w-full min-h-[100dvh] bg-black font-sans">
       <Hero getMoonPhase={getMoonPhase} />

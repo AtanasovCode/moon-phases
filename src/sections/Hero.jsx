@@ -1,6 +1,5 @@
 import { useMoonStore } from '../useMoonStore';
 import moonIcon from '../assets/images/moon.svg';
-import checkmarkIcon from '../assets/icons/checkmark.svg';
 
 import { SpinnerGap, Check } from '@phosphor-icons/react';
 
@@ -9,6 +8,8 @@ const Hero = ({ getMoonPhase, }) => {
     const {
         hideText,
         toggleHideText,
+        loading,
+        dataHasBeenFetched,
     } = useMoonStore();
 
     const hideStyle = hideText ? "opacity-[0]" : "opacity-[1]";
@@ -61,15 +62,24 @@ const Hero = ({ getMoonPhase, }) => {
                         The Moon has 8 phases, see which one is above you right now.
                     </div>
                     <div className="w-full mt-4 flex items-center justify-center lg:justify-start">
-                        <input
-                            type="button"
-                            value="See now"
-                            className="
-                                w-[70%] text-text bg-space-black border-2 border-primary
-                                px-4 py-3 font-semibold rounded-xl cursor-pointer 
-                            "
-                            onClick={() => getMoonPhase()}
-                        />
+                        <div className="
+                            w-[70%] text-text bg-space-black border-2 border-primary relative
+                            px-4 py-6 font-semibold rounded-xl flex items-center justify-center
+                        ">
+                            {
+                                loading ?
+                                    <div className="absolute w-full h-full flex items-center justify-center animate-spin">
+                                        <SpinnerGap size="70%" weight="regular" color="#FFF" />
+                                    </div>
+                                    :
+                                    <input
+                                        type="button"
+                                        value={dataHasBeenFetched ? "See below" : "See now"}
+                                        className="absolute w-full h-full top-0 left-0 text-center cursor-pointer"
+                                        onClick={() => !dataHasBeenFetched && getMoonPhase()}
+                                    />
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,7 +97,7 @@ const Hero = ({ getMoonPhase, }) => {
                         absolute top-0 left-0 w-full h-full bg-text ${hideCheckmark}
                         transition-all duration-300 ease-in-out flex items-center justify-center
                     `}>
-                        <Check 
+                        <Check
                             size="80%"
                             weight="regular"
                             color="#000"
