@@ -1,7 +1,7 @@
 import { useMoonStore } from "../useMoonStore";
-import { getMoonIconAndName } from "../Utils";
 
 import CurrentMoonPhase from "../components/CurrentMoonPhase";
+import NextMoonPhases from "../components/NextMoonPhases";
 
 const MoonPhase = ({ moonRef, }) => {
 
@@ -16,6 +16,7 @@ const MoonPhase = ({ moonRef, }) => {
         >
             <div className="flex flex-col items-center justify-center w-full xs:w-[95%] sm:w-[80%] md:w-[95%] lg:max-w-[1440px]">
                 <CurrentMoonPhase />
+                <NextMoonPhases />
             </div>
         </div>
     );

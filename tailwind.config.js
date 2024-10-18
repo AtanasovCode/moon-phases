@@ -19,7 +19,8 @@ export default {
       screens: {
         'xs': "550px",
         '2xs': "440px",
-        'xl': "1600px",
+        'xl': "1360px",
+        '2xl': "1600px",
       },
       backgroundImage: {
         'hero-desktop-xl': "url('/bg-earth-moon-xl.svg')",

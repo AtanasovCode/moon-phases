@@ -5,7 +5,7 @@ const CurrentMoonPhase = () => {
 
     const { moonPhase } = useMoonStore();
 
-    const { name, icon, description } = getMoonIconAndName();
+    const { name, icon, description } = getMoonIconAndName(moonPhase);
 
     return (
         <div className="w-full flex flex-col items-center justify-center md:flex-row">

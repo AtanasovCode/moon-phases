@@ -36,7 +36,7 @@ const Hero = ({ getMoonPhase, }) => {
                     bg-hero-mobile bg-top bg-cover bg-no-repeat
                     xs:h-[25%] sm:h-[30%]
                     lg:bg-hero-desktop lg:h-full lg:w-full
-                    xl:bg-hero-desktop-xl
+                    2xl:bg-hero-desktop-xl
                 ">
                     {/*Hero Background Image*/}
                 </div>

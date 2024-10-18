@@ -1,5 +1,4 @@
-import { useMoonStore } from "./useMoonStore";
-
+import { format, parseISO } from 'date-fns';
 // Importing moon phases images
 import fullMoon from './assets/phases/full-moon.svg';
 import newMoon from './assets/phases/new-moon.svg';
@@ -9,8 +8,7 @@ import waxingCrescent from './assets/phases/waxing-crescent.svg';
 import waningGibbous from './assets/phases/waning-gibbous.svg';
 import waningCrescent from './assets/phases/waning-crescent.svg';
 
-export const getMoonIconAndName = () => {
-    const { moonPhase } = useMoonStore();
+export const getMoonIconAndName = (moonPhase) => {
 
     if (moonPhase === 0) {
         return {
@@ -62,4 +60,33 @@ export const getMoonIconAndName = () => {
         };
     }
 };
+
+
+export const getNextMoonPhases = (days) => {
+    const seenPhases = new Set();
+    const result = [];
+
+    days.forEach((day) => {
+        const { moonphase } = day;
+        const { name, icon, description } = getMoonIconAndName(moonphase);
+
+        if (!seenPhases.has(name)) {
+            result.push({
+                date: day.datetime,
+                moonphase: name,
+                icon,
+                description,
+            });
+            seenPhases.add(name);
+        }
+    });
+
+    return result;
+};
+
+export const formatDateToDay = (date) => {
+    const parsedDate = typeof date === 'string' ? parseISO(date) : date;
+    return format(parsedDate, "EEE, d");
+}
+
 
