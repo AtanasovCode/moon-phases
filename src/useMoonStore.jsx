@@ -17,4 +17,5 @@ export const useMoonStore = create((set) => ({
     setMoonPhase: (moonPhase) => set({ moonPhase }),
     days: [],
     setDays: (days) => set({ days }),
+    moonPhasesInfoSource: "https://www.planetary.org/articles/the-phases-of-the-moon-explained"
 }))

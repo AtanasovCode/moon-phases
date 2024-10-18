@@ -13,7 +13,9 @@ export default {
         'primary': '#35d646',
         'secondary': '#2364A9',
       },
-      fontFamily: {},
+      fontFamily: {
+        'sans': "Quicksand",
+      },
       screens: {
         'xs': "550px",
         'xl': "1600px",
