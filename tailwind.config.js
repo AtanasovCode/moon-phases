@@ -18,6 +18,7 @@ export default {
       },
       screens: {
         'xs': "550px",
+        '2xs': "440px",
         'xl': "1600px",
       },
       backgroundImage: {
