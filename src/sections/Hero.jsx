@@ -48,7 +48,8 @@ const Hero = ({ getMoonPhase, }) => {
                                     <input
                                         type="button"
                                         value={dataHasBeenFetched ? "See below" : "See now"}
-                                        className="absolute w-full h-full top-0 left-0 text-center cursor-pointer"
+                                        className="absolute w-full h-full top-0 left-0 text-center cursor-pointer
+                                        hover:bg-background transition-all duration-300 ease-in-out"
                                         onClick={() => !dataHasBeenFetched && getMoonPhase()}
                                     />
                             }

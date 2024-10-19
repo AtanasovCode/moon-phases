@@ -14,7 +14,7 @@ export default {
         'secondary': '#2364A9',
       },
       fontFamily: {
-        'sans': "Quicksand",
+        'sans': "Lato",
       },
       screens: {
         'xs': "550px",
@@ -23,7 +23,7 @@ export default {
         '2xl': "1770px",
       },
       backgroundImage: {
-        'starry-night': "url('/starry-night.svg')",
+        'stars': "url('/stars.jpg')",
         'moon-background': "url('/moon-background.jpg')",
       },
     },
