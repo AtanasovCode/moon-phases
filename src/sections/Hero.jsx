@@ -28,7 +28,7 @@ const Hero = ({ getMoonPhase, }) => {
                     lg:w-[35%] lg:items-start 2xl:bg-black 2xl:bg-opacity-30 2xl:p-4
                 `}>
                     <div className="font-black text-6xl mb-4 lg:text-7xl">
-                        <div>Moon</div>
+                        <div>Lunar</div>
                         <div>Phases</div>
                     </div>
                     <div className="text-gray-300 text-center lg:text-left lg:w-[70%] lg:text-lg">
