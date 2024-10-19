@@ -16,43 +16,16 @@ const Hero = ({ getMoonPhase, }) => {
     const hideCheckmark = hideText ? "opacity-100" : "opacity-0";
 
     return (
-        <div className="h-[100dvh] bg-space-black w-full flex items-center justify-center relative">
+        <div className="h-[100dvh] bg-space-black w-full flex items-center justify-center relative 
+        bg-moon-background bg-cover bg-bottom bg-no-repeat">
             <div className="
-                    absolute w-full h-full top-0 left-0 z-0 
-                    bg-starry-night bg-center bg-300% gb-no-repeat
-                    motion-safe:animate-pan-bg
-                    xs:bg-300%
-                    lg:bg-200%
-                ">
-                {/*Stars Background Image*/}
-            </div>
-            <div className="
-                w-full h-full flex items-center justify-center relative
-                sm:w-[80%] md:w-[60%] 
-                lg:w-full lg:justify-start lg:px-12 lg:max-w-[1600px]
+                w-full h-full flex items-start justify-center relative py-16
+                sm:w-[80%] md:w-[60%] lg:items-center
+                lg:w-full lg:justify-start lg:px-12 lg:py-0 lg:max-w-[1600px]
             ">
-                <div className="
-                    absolute w-full h-[20%] bottom-0 left-0 z-10
-                    bg-hero-mobile bg-top bg-cover bg-no-repeat
-                    xs:h-[25%] sm:h-[30%]
-                    lg:bg-hero-desktop lg:h-full lg:w-full
-                    2xl:bg-hero-desktop-xl
-                ">
-                    {/*Hero Background Image*/}
-                </div>
-                <div className="absolute top-[5%] left-[50%] translate-x-[-50%] z-10 w-[20%] xs:w-[17%] sm:w-[10%] lg:hidden">
-                    <img
-                        src={moonIcon}
-                        alt="icon of the moon"
-                        className="w-[100%] lg:hidden"
-                    />
-                </div>
-
-                {/* Page Content Below */}
                 <div className={`
                     flex flex-col items-center justify-center text-text w-[80%] z-50
-                    lg:w-[35%] lg:items-start 
-                    ${hideStyle} transition-all duration-500 ease-in-out
+                    lg:w-[35%] lg:items-start 2xl:bg-black 2xl:bg-opacity-30 2xl:p-4
                 `}>
                     <div className="font-black text-6xl mb-4 lg:text-7xl">
                         <div>Moon</div>
@@ -63,7 +36,7 @@ const Hero = ({ getMoonPhase, }) => {
                     </div>
                     <div className="w-full mt-4 flex items-center justify-center lg:justify-start">
                         <div className="
-                            w-[70%] text-text bg-space-black border-2 border-primary relative
+                            w-[90%] lg:w-[70%] text-text bg-transparent border-2 border-secondary relative
                             px-4 py-6 font-semibold rounded-xl flex items-center justify-center
                         ">
                             {
@@ -81,31 +54,6 @@ const Hero = ({ getMoonPhase, }) => {
                             }
                         </div>
                     </div>
-                </div>
-            </div>
-            <div
-                className="absolute bottom-[2%] left-[2%] z-20 flex items-center justify-center 
-                cursor-pointer opacity-40 hover:opacity-100 transition-all duration-300 ease-in-out"
-                onClick={() => toggleHideText()}
-            >
-                <div className={`
-                            w-4 aspect-square bg-transparent relative 
-                            border border-text border-solid
-                        `}
-                >
-                    <div className={`
-                        absolute top-0 left-0 w-full h-full bg-text ${hideCheckmark}
-                        transition-all duration-300 ease-in-out flex items-center justify-center
-                    `}>
-                        <Check
-                            size="80%"
-                            weight="regular"
-                            color="#000"
-                        />
-                    </div>
-                </div>
-                <div className="text-text ml-2">
-                    Hide text
                 </div>
             </div>
         </div>
