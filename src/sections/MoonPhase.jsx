@@ -13,7 +13,7 @@ const MoonPhase = ({ moonRef, }) => {
     return (
         <div
             ref={moonRef}
-            className="min-h-[100dvh] w-full bg-space-black text-text flex flex-col items-center justify-start py-14 px-2 lg:px-4 lg:py-20"
+            className="min-h-[100dvh] w-full bg-space-black text-text flex flex-col items-center justify-start pt-14 pb-6 px-2 lg:px-4 lg:pt-20 lg:pb-8"
         >
             <div className="flex flex-col items-center justify-center w-full xs:w-[90%] sm:w-[70%] md:w-[95%] lg:max-w-[1440px]">
                 <div className="w-full mb-24">
