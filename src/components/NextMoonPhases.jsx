@@ -20,7 +20,7 @@ const NextMoonPhases = () => {
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
                 {
                     getNextMoonPhases(days).map((day, index) => {
-                        if (index < 4) return <Phase
+                        if (index > 0 && index < 5) return <Phase
                             moonPhase={day.moonphase}
                             icon={day.icon}
                             date={day.date}
