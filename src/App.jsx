@@ -23,7 +23,7 @@ const App = () => {
       setLoading(true);
       setDataHasBeenFetched(false);
 
-      const data = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Skopje?unitGroup=us&include=current&key=N98UUEZWJCFKVHRPUJNY28T7R&contentType=json");
+      const data = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Berlin?unitGroup=us&include=current&key=N98UUEZWJCFKVHRPUJNY28T7R&contentType=json");
 
       if (!data.ok) {
         throw new Error(`Error: ${data.status} - ${data.statusText}`)
